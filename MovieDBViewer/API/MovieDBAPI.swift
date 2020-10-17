@@ -15,19 +15,12 @@ class MovieDBViewerAPI: NSObject {
     var url : String{
         get{
           
-            return "https://api.themoviedb.org/3/"
+            return ConfigureDataHandler.shared.baseURL()
              
         }
     }
 
-    var auth : String{
-        get{
-            
-                return ConfigureDataHandler.shared.baseAuthorization()
-              
-        }
-    }
- 
+   
 
     
     private override init() {}
@@ -38,24 +31,24 @@ class MovieDBViewerAPI: NSObject {
         let instance = MovieDBViewerAPI()
         var sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = TimeInterval.init(100)
-        instance.session = Session(configuration: sessionConfig, interceptor: MovieDBViewerAPIHelper())
+        instance.session = Session(configuration: sessionConfig)
         return instance
     }()
     
     
     
     
-    //MARK: - Report Functions
+    //MARK: - Post Function
     func post<T:Codable>(_ callPath:String,
                          parameters: [String: Any]?,
                          headers: HTTPHeaders? = nil,
                          success:@escaping (T) -> Void,
-                         failure:@escaping (ErrorResponse?) -> Void,
+                         failure:@escaping (Error?) -> Void,
                          afterCall:@escaping () -> Void = {}){
         
         
         /// merge url's from configure.plist and call path
-        let url = ConfigureDataHandler.shared.baseUrl() + callPath
+        let url = ConfigureDataHandler.shared.baseURL() + callPath
         
         ///make the post requests with parameter and encoding
         session.request(url, method: .post, parameters: parameters, encoding : JSONEncoding.default).validate().responseDecodable{ (response:AFDataResponse<T>)  in
@@ -70,9 +63,7 @@ class MovieDBViewerAPI: NSObject {
                 
             case .failure(let error):
                 
-                let generalError = ErrorResponse(statusCode: response.response?.statusCode, errorCode : error.responseCode, errorMessage: callPath + ": " + error.localizedDescription)
-                failure(generalError)
-                print(generalError)
+             failure(error)
             }
             
             
@@ -86,12 +77,12 @@ class MovieDBViewerAPI: NSObject {
                         parameters: [String: Any]?,
                         headers: HTTPHeaders? = nil,
                         success:@escaping (T) -> Void,
-                        failure:@escaping (ErrorResponse?) -> Void,
+                        failure:@escaping (Error?) -> Void,
                         afterCall:@escaping () -> Void = {}){
         
         //check login status and set the http headers accordingly
         
-        let url = ConfigureDataHandler.shared.baseUrl() + callPath
+        let url = ConfigureDataHandler.shared.baseURL() + callPath
         
         
         session.request(url, method: .get, parameters: parameters, encoding : JSONEncoding.default).validate().responseDecodable{ (response:AFDataResponse<T>)  in
@@ -100,9 +91,9 @@ class MovieDBViewerAPI: NSObject {
             case .success(let value):
                 success(value)
             case .failure(let error):
-        
-             let generalError = ErrorResponse(statusCode: response.response?.statusCode, errorCode : error.responseCode, errorMessage: callPath + ": " + error.localizedDescription)
-                failure(generalError)
+        failure(error)
+         //    let generalError = ErrorResponse(statusCode: response.response?.statusCode, errorCode : error.responseCode, errorMessage: callPath + ": " + error.localizedDescription)
+        //        failure(generalError)
             }
         }
     }
