@@ -8,8 +8,8 @@
 import Foundation
 import Foundation
 
-// MARK: - Welcome
-struct PopularMovieResult: Codable {
+// MARK: - ResponseMark
+struct PopularMoviesResponse: Codable {
     var page : Int?
 var totalResults : Int?
 var totalPages: Int?

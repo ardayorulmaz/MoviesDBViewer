@@ -19,5 +19,13 @@ class PopularMoviesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    static func identifier() -> String{
+           return "PopularMoviesTableViewCell"
+       }
+    func configureCell(data : MovieData){
+        
+        
+    }
     
+       
 }

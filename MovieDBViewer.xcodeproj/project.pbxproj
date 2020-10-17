@@ -22,6 +22,8 @@
 		AF278907253B8098007A61A7 /* GenreResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278906253B8098007A61A7 /* GenreResponseObject.swift */; };
 		AF27890C253B8104007A61A7 /* GenreAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27890B253B8104007A61A7 /* GenreAPICalls.swift */; };
 		AF278911253B84D3007A61A7 /* GenreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278910253B84D3007A61A7 /* GenreDataHandler.swift */; };
+		AF278917253BA8CF007A61A7 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF278915253BA8CF007A61A7 /* MovieDetailViewController.xib */; };
+		AF278918253BA8CF007A61A7 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278916253BA8CF007A61A7 /* MovieDetailViewController.swift */; };
 		AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF404216253A4CE00041DEBB /* AppDelegate.swift */; };
 		AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40421A253A4CE00041DEBB /* ViewController.swift */; };
 		AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40421C253A4CE00041DEBB /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		AF278906253B8098007A61A7 /* GenreResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponseObject.swift; sourceTree = "<group>"; };
 		AF27890B253B8104007A61A7 /* GenreAPICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreAPICalls.swift; sourceTree = "<group>"; };
 		AF278910253B84D3007A61A7 /* GenreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataHandler.swift; sourceTree = "<group>"; };
+		AF278915253BA8CF007A61A7 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		AF278916253BA8CF007A61A7 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		AF404213253A4CE00041DEBB /* MovieDBViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDBViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF404216253A4CE00041DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40421A253A4CE00041DEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				AF2788FE253B7493007A61A7 /* TableViewCells */,
 				AF2788EF253B4203007A61A7 /* MainPageViewController.xib */,
 				AF2788F0253B4203007A61A7 /* MainPageViewController.swift */,
+				AF278915253BA8CF007A61A7 /* MovieDetailViewController.xib */,
+				AF278916253BA8CF007A61A7 /* MovieDetailViewController.swift */,
 			);
 			path = "Main Flow";
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF278917253BA8CF007A61A7 /* MovieDetailViewController.xib in Resources */,
 				AF278901253B7612007A61A7 /* PopularMoviesTableViewCell.xib in Resources */,
 				AF404223253A4CE10041DEBB /* LaunchScreen.storyboard in Resources */,
 				AF2788C9253B3215007A61A7 /* Configuration.plist in Resources */,
@@ -505,6 +512,7 @@
 				AF278907253B8098007A61A7 /* GenreResponseObject.swift in Sources */,
 				AF278911253B84D3007A61A7 /* GenreDataHandler.swift in Sources */,
 				AF278902253B7612007A61A7 /* PopularMoviesTableViewCell.swift in Sources */,
+				AF278918253BA8CF007A61A7 /* MovieDetailViewController.swift in Sources */,
 				AF2788D1253B3D8E007A61A7 /* PopularMoviesResponseObject.swift in Sources */,
 				AF2788E4253B4065007A61A7 /* SearchAPICalls.swift in Sources */,
 				AF2788AA253B1DE3007A61A7 /* MovieDBAPI.swift in Sources */,

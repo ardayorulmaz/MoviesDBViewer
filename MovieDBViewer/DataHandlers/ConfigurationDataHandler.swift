@@ -8,7 +8,7 @@
 import Foundation
 
 import UIKit
-class ConfigureDataHandler: NSObject {
+class ConfigurationDataHandler: NSObject {
 
    var fullPlist : NSDictionary!
 
@@ -16,8 +16,8 @@ class ConfigureDataHandler: NSObject {
   
 
 
-   static let shared: ConfigureDataHandler = {
-       let instance = ConfigureDataHandler()
+   static let shared: ConfigurationDataHandler = {
+       let instance = ConfigurationDataHandler()
        var nsDictionary: NSDictionary?
        if let path = Bundle.main.path(forResource: "Configuration", ofType: "plist") {
 
@@ -50,6 +50,6 @@ class ConfigureDataHandler: NSObject {
        guard let plist = fullPlist, let apiKey = plist["APIKey"] as? String else{
            fatalError("could not find APIKey on Configuration.plist")
        }
-       return apiKey
+       return "?api_key="+apiKey
    }
 }

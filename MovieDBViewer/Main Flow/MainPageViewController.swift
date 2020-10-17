@@ -11,15 +11,20 @@ class MainPageViewController: UIViewController {
 
     @IBOutlet weak var vwSearch: UIView!
     @IBOutlet weak var tblMain: UITableView!
+    
+    var popularMovies : [MovieData] = []
+    var pageSize : Int = 10
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initTableView()
+        self.loadData(page: 1)
 
         // Do any additional setup after loading the view.
     }
     func initTableView() {
             
             let nib = UINib(nibName: PopularMoviesTableViewCell.identifier(), bundle: nil)
-            self.tblMain.register(nib, forCellReuseIdentifier: NewsTableViewCell.identifier())
+            self.tblMain.register(nib, forCellReuseIdentifier: PopularMoviesTableViewCell.identifier())
             self.tblMain.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 1.0))
             self.tblMain.delegate = self
             self.tblMain.dataSource = self
@@ -30,7 +35,35 @@ class MainPageViewController: UIViewController {
        
 
     func loadData(page : Int = 1){
-        
+        //Page parameter starts with 1 because of API’s preference
+          
+     
+                
+       //If we are calling first page, we are clearing our movie array..
+                if page == 1 {
+                    self.popularMovies = []
+                }
+          
+                        MovieAPICalls.getPopular(page: page) { (data) in
+                            
+                            guard let responseData = data else {
+                                return
+                            }
+         guard let movies = responseData.results, movies.count>0 else {
+        return
+        }
+                            self.popularMovies.append(contentsOf: movies)
+        self.tblMain.reloadData()
+          
+
+                        } failure: { (error) in
+                            print("error while fetching \(page)")
+                        }
+
+                
+                  
+                    
+
     }
     /*
     // MARK: - Navigation
@@ -51,7 +84,7 @@ extension MainPageViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PopularMoviesTableViewCell.identifier(), for: indexPath) as! PopularMoviesTableViewCell
         if self.popularMovies.count > 0{
-        cell.configureCell(item: self.newsItems[indexPath.row])
+        cell.configureCell(data: self.popularMovies[indexPath.row])
         }
         return cell
     }
@@ -67,7 +100,7 @@ extension MainPageViewController : UITableViewDataSource, UITableViewDelegate{
         
         let movieDetailVC = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
         
-        movieDetailVC.movieId = self.popularMovies[indexPath.row].id
+     //   movieDetailVC.movieId = self.popularMovies[indexPath.row].id
        
         self.navigationController?.pushViewController(movieDetailVC , animated: true)
         

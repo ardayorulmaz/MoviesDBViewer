@@ -15,7 +15,7 @@ class MovieDBViewerAPI: NSObject {
     var url : String{
         get{
           
-            return ConfigureDataHandler.shared.baseURL()
+            return ConfigurationDataHandler.shared.baseURL()
              
         }
     }
@@ -48,7 +48,7 @@ class MovieDBViewerAPI: NSObject {
         
         
         /// merge url's from configure.plist and call path
-        let url = ConfigureDataHandler.shared.baseURL() + callPath
+        let url = ConfigurationDataHandler.shared.baseURL() + callPath
         
         ///make the post requests with parameter and encoding
         session.request(url, method: .post, parameters: parameters, encoding : JSONEncoding.default).validate().responseDecodable{ (response:AFDataResponse<T>)  in
@@ -82,7 +82,7 @@ class MovieDBViewerAPI: NSObject {
         
         //check login status and set the http headers accordingly
         
-        let url = ConfigureDataHandler.shared.baseURL() + callPath
+        let url = ConfigurationDataHandler.shared.baseURL() + callPath
         
         
         session.request(url, method: .get, parameters: parameters, encoding : JSONEncoding.default).validate().responseDecodable{ (response:AFDataResponse<T>)  in
