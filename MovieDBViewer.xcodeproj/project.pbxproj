@@ -17,6 +17,11 @@
 		AF2788E4253B4065007A61A7 /* SearchAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2788E3253B4065007A61A7 /* SearchAPICalls.swift */; };
 		AF2788F1253B4203007A61A7 /* MainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2788EF253B4203007A61A7 /* MainPageViewController.xib */; };
 		AF2788F2253B4203007A61A7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2788F0253B4203007A61A7 /* MainPageViewController.swift */; };
+		AF278901253B7612007A61A7 /* PopularMoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2788FF253B7612007A61A7 /* PopularMoviesTableViewCell.xib */; };
+		AF278902253B7612007A61A7 /* PopularMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278900253B7612007A61A7 /* PopularMoviesTableViewCell.swift */; };
+		AF278907253B8098007A61A7 /* GenreResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278906253B8098007A61A7 /* GenreResponseObject.swift */; };
+		AF27890C253B8104007A61A7 /* GenreAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27890B253B8104007A61A7 /* GenreAPICalls.swift */; };
+		AF278911253B84D3007A61A7 /* GenreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278910253B84D3007A61A7 /* GenreDataHandler.swift */; };
 		AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF404216253A4CE00041DEBB /* AppDelegate.swift */; };
 		AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40421A253A4CE00041DEBB /* ViewController.swift */; };
 		AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40421C253A4CE00041DEBB /* Main.storyboard */; };
@@ -60,6 +65,11 @@
 		AF2788EF253B4203007A61A7 /* MainPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageViewController.xib; sourceTree = "<group>"; };
 		AF2788F0253B4203007A61A7 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		AF2788F6253B43F7007A61A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF2788FF253B7612007A61A7 /* PopularMoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMoviesTableViewCell.xib; sourceTree = "<group>"; };
+		AF278900253B7612007A61A7 /* PopularMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesTableViewCell.swift; sourceTree = "<group>"; };
+		AF278906253B8098007A61A7 /* GenreResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponseObject.swift; sourceTree = "<group>"; };
+		AF27890B253B8104007A61A7 /* GenreAPICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreAPICalls.swift; sourceTree = "<group>"; };
+		AF278910253B84D3007A61A7 /* GenreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataHandler.swift; sourceTree = "<group>"; };
 		AF404213253A4CE00041DEBB /* MovieDBViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDBViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF404216253A4CE00041DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40421A253A4CE00041DEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 		AF2788A5253B1B9D007A61A7 /* Main Flow */ = {
 			isa = PBXGroup;
 			children = (
+				AF2788FE253B7493007A61A7 /* TableViewCells */,
 				AF2788EF253B4203007A61A7 /* MainPageViewController.xib */,
 				AF2788F0253B4203007A61A7 /* MainPageViewController.swift */,
 			);
@@ -151,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AF2788AF253B1F4C007A61A7 /* ConfigurationDataHandler.swift */,
+				AF278910253B84D3007A61A7 /* GenreDataHandler.swift */,
 			);
 			path = DataHandlers;
 			sourceTree = "<group>";
@@ -168,6 +180,7 @@
 			children = (
 				AF2788D5253B3E9B007A61A7 /* MoviesAPICalls.swift */,
 				AF2788E3253B4065007A61A7 /* SearchAPICalls.swift */,
+				AF27890B253B8104007A61A7 /* GenreAPICalls.swift */,
 			);
 			path = "API Callers";
 			sourceTree = "<group>";
@@ -176,8 +189,18 @@
 			isa = PBXGroup;
 			children = (
 				AF2788D0253B3D8E007A61A7 /* PopularMoviesResponseObject.swift */,
+				AF278906253B8098007A61A7 /* GenreResponseObject.swift */,
 			);
 			path = "Response Objects";
+			sourceTree = "<group>";
+		};
+		AF2788FE253B7493007A61A7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				AF2788FF253B7612007A61A7 /* PopularMoviesTableViewCell.xib */,
+				AF278900253B7612007A61A7 /* PopularMoviesTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		AF40420A253A4CDF0041DEBB = {
@@ -345,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF278901253B7612007A61A7 /* PopularMoviesTableViewCell.xib in Resources */,
 				AF404223253A4CE10041DEBB /* LaunchScreen.storyboard in Resources */,
 				AF2788C9253B3215007A61A7 /* Configuration.plist in Resources */,
 				AF404220253A4CE10041DEBB /* Assets.xcassets in Resources */,
@@ -478,12 +502,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2788F2253B4203007A61A7 /* MainPageViewController.swift in Sources */,
+				AF278907253B8098007A61A7 /* GenreResponseObject.swift in Sources */,
+				AF278911253B84D3007A61A7 /* GenreDataHandler.swift in Sources */,
+				AF278902253B7612007A61A7 /* PopularMoviesTableViewCell.swift in Sources */,
 				AF2788D1253B3D8E007A61A7 /* PopularMoviesResponseObject.swift in Sources */,
 				AF2788E4253B4065007A61A7 /* SearchAPICalls.swift in Sources */,
 				AF2788AA253B1DE3007A61A7 /* MovieDBAPI.swift in Sources */,
 				AF2788B0253B1F4C007A61A7 /* ConfigurationDataHandler.swift in Sources */,
 				AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */,
 				AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */,
+				AF27890C253B8104007A61A7 /* GenreAPICalls.swift in Sources */,
 				AF2788D6253B3E9B007A61A7 /* MoviesAPICalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

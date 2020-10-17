@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainPageViewController" customModule="MovieDBViewer" customModuleProvider="target">
             <connections>
+                <outlet property="tblMain" destination="M71-wF-UnT" id="amP-Mv-ZlK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwSearch" destination="dct-wQ-pAB" id="mMQ-JP-ELL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,16 +21,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-7g-49T">
-                    <rect key="frame" x="155" y="231" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dct-wQ-pAB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="lc9-jc-SWn"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M71-wF-UnT">
+                    <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="dct-wQ-pAB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AeO-31-di0"/>
+                <constraint firstItem="dct-wQ-pAB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hxb-nS-qou"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dct-wQ-pAB" secondAttribute="trailing" id="Zvh-bS-sDJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M71-wF-UnT" secondAttribute="trailing" id="fkw-vy-YBr"/>
+                <constraint firstItem="M71-wF-UnT" firstAttribute="top" secondItem="dct-wQ-pAB" secondAttribute="bottom" id="kT5-an-NrD"/>
+                <constraint firstItem="M71-wF-UnT" firstAttribute="top" secondItem="dct-wQ-pAB" secondAttribute="bottom" id="lKg-Cg-FRJ"/>
+                <constraint firstItem="M71-wF-UnT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n3n-9Z-rdT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="M71-wF-UnT" secondAttribute="bottom" id="slm-pM-Orh"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="94"/>
         </view>
     </objects>
