@@ -8,12 +8,12 @@
 import Foundation
 import Foundation
 
-// MARK: - ResponseMark
+// MARK: - Welcome
 struct PopularMoviesResponse: Codable {
     var page : Int?
 var totalResults : Int?
 var totalPages: Int?
-    var results: [MovieData]?
+    var results: [PopularMovieData]?
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -24,7 +24,7 @@ var totalPages: Int?
 }
 
 // MARK: - Movie Data Model
-struct MovieData: Codable {
+struct PopularMovieData: Codable {
     var popularity: Double?
     var voteCount: Int?
     var video: Bool?

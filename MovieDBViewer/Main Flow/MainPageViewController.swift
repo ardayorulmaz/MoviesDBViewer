@@ -12,14 +12,28 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var vwSearch: UIView!
     @IBOutlet weak var tblMain: UITableView!
     
-    var popularMovies : [MovieData] = []
+    var popularMovies : [PopularMovieData
+    ] = []
     var pageSize : Int = 20
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
         self.loadData(page: 1)
-
+        self.setupSearchView()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func setupSearchView(){
+        
+        let searchVC = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        self.addChild(searchVC)
+        self.vwSearch.addSubview(searchVC.view)
+        searchVC.view.frame = self.vwSearch.bounds
+        searchVC.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+        
+        searchVC.didMove(toParent: self)
+        
     }
     func initTableView() {
             

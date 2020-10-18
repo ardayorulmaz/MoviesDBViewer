@@ -33,7 +33,8 @@ class PopularMoviesTableViewCell: UITableViewCell {
     static func identifier() -> String{
            return "PopularMoviesTableViewCell"
        }
-    func configureCell(data : MovieData){
+    func configureCell(data : PopularMovieData
+    ){
         if let movieImage = data.posterPath{
             self.imgMovie.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  movieImage ), placeholder: UIImage.init(named: "movieDBLogo") )
         }
