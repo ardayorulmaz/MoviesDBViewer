@@ -15,7 +15,7 @@ class GenreAPICalls: NSObject {
                          success:@escaping (GenreResponse?) -> Void,
                          failure:@escaping (Error?) -> Void){
       /// make the call
-    MovieDBViewerAPI.sharedAPI.get("genre/\(media)/list?"+ConfigurationDataHandler.shared.APIKey()+"language=en-US", parameters: nil, success: success, failure: failure);
+    MovieDBViewerAPI.sharedAPI.get("genre/\(media)/list"+ConfigurationDataHandler.shared.APIKey()+"&language=en-US", parameters: nil, success: success, failure: failure);
 
    }
     

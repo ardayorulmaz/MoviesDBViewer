@@ -7,7 +7,8 @@ target 'MovieDBViewer' do
 
   # Pods for MovieDBViewer
 pod 'Alamofire', '~> 5.2'
-
+pod 'Kingfisher', '~> 5.0'
+pod 'NotificationBannerSwift', '~> 3.0.0'
 
   target 'MovieDBViewerTests' do
     inherit! :search_paths

@@ -6,9 +6,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PopularMoviesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgMovie: UIImageView!
+    @IBOutlet weak var lblMovieTitle: UILabel!
+    
+    @IBOutlet weak var lblReleaseDate: UILabel!
+    
+    @IBOutlet weak var lblGenres: UILabel!
+    
+    @IBOutlet weak var lblScore: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +34,21 @@ class PopularMoviesTableViewCell: UITableViewCell {
            return "PopularMoviesTableViewCell"
        }
     func configureCell(data : MovieData){
-        
+        if let movieImage = data.posterPath{
+            self.imgMovie.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  movieImage ), placeholder: UIImage.init(named: "movieDBLogo") )
+        }
+        if let ids = data.genreIDS {
+            self.lblGenres.text = GenreDataHandler.shared.getGenreString(ids: ids, genre : .Movie)
+        }
+        if let title = data.title {
+            self.lblMovieTitle.text = title
+        }
+        if let releaseDate = data.releaseDate {
+            self.lblReleaseDate.text = releaseDate.dateFormatted()
+        }
+        if let rate = data.voteAverage {
+            self.lblScore.text = String(format: "%.1f", rate) + "/10"
+        }
         
     }
     

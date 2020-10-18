@@ -10,7 +10,7 @@ import Foundation
 
 class GenreDataHandler: NSObject {
     
-    static let sharedHandler: GenreDataHandler = {
+    static let shared: GenreDataHandler = {
         let instance = GenreDataHandler()
         
         return instance
@@ -38,9 +38,25 @@ class GenreDataHandler: NSObject {
         return data
     }
     
-    
-    
-    func setGenreDataFromResponse( _ data:GenreResponse, media : GenreMedia){
+    func getGenreString(ids : [Int], genre : GenreMedia)->String?{
+            guard let genreData = self.getGenreDataFor(media: genre) else {
+                return nil
+            }
+           var stringToReturn : String = ""
+           
+           for id in ids {
+    if let genreArray = genreData.genres {
+    for item in genreArray {
+
+    if item.id == id {
+        stringToReturn += (item.name ?? "") + (ids.last == id ? "" : "/" )
+    }
+    }
+    }
+    }
+        return stringToReturn
+    }
+                 func setGenreDataFromResponse( _ data:GenreResponse, media : GenreMedia){
         self.setGenreData(data, media : media)
     }
     
@@ -58,7 +74,12 @@ class GenreDataHandler: NSObject {
         UserDefaults.standard.set(String(data: encoded, encoding: .utf8)!, forKey: key ?? self.movieGenreDataKey )
     }
     
-    func getTVGenreDataFromServer() {
+    
+   
+        
+        
+    
+    func getTVGenreDataFromServer( endBlock: @escaping () -> Void = {}) {
         
         GenreAPICalls.getGenres(media: "tv", success: { (response) in
             
@@ -66,12 +87,13 @@ class GenreDataHandler: NSObject {
                 return
             }
             self.setGenreDataFromResponse(data, media : .TV)
-            
+          endBlock()
         }) { (error) in
-            
+            endBlock()
         }
+        
     }
-    func getMovieGenreDataFromServer() {
+    func getMovieGenreDataFromServer( endBlock: @escaping () -> Void = {}) {
         
         GenreAPICalls.getGenres(media: "movie", success: { (response) in
             
@@ -79,9 +101,9 @@ class GenreDataHandler: NSObject {
                 return
             }
             self.setGenreDataFromResponse(data, media : .Movie)
-            
+            endBlock()
         }) { (error) in
-            
+            endBlock()
         }
     }
     

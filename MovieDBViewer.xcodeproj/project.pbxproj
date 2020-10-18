@@ -24,6 +24,9 @@
 		AF278911253B84D3007A61A7 /* GenreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278910253B84D3007A61A7 /* GenreDataHandler.swift */; };
 		AF278917253BA8CF007A61A7 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF278915253BA8CF007A61A7 /* MovieDetailViewController.xib */; };
 		AF278918253BA8CF007A61A7 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278916253BA8CF007A61A7 /* MovieDetailViewController.swift */; };
+		AF27891F253C42C3007A61A7 /* LandingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF27891D253C42C3007A61A7 /* LandingPageViewController.xib */; };
+		AF278920253C42C3007A61A7 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27891E253C42C3007A61A7 /* LandingPageViewController.swift */; };
+		AF278931253C7571007A61A7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278930253C7571007A61A7 /* StringExtensions.swift */; };
 		AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF404216253A4CE00041DEBB /* AppDelegate.swift */; };
 		AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40421A253A4CE00041DEBB /* ViewController.swift */; };
 		AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40421C253A4CE00041DEBB /* Main.storyboard */; };
@@ -74,6 +77,9 @@
 		AF278910253B84D3007A61A7 /* GenreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataHandler.swift; sourceTree = "<group>"; };
 		AF278915253BA8CF007A61A7 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		AF278916253BA8CF007A61A7 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		AF27891D253C42C3007A61A7 /* LandingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandingPageViewController.xib; sourceTree = "<group>"; };
+		AF27891E253C42C3007A61A7 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		AF278930253C7571007A61A7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		AF404213253A4CE00041DEBB /* MovieDBViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDBViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF404216253A4CE00041DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40421A253A4CE00041DEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +215,23 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		AF27891C253C424E007A61A7 /* Landing Flow */ = {
+			isa = PBXGroup;
+			children = (
+				AF27891D253C42C3007A61A7 /* LandingPageViewController.xib */,
+				AF27891E253C42C3007A61A7 /* LandingPageViewController.swift */,
+			);
+			path = "Landing Flow";
+			sourceTree = "<group>";
+		};
+		AF27892F253C754E007A61A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF278930253C7571007A61A7 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AF40420A253A4CDF0041DEBB = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +257,8 @@
 		AF404215253A4CE00041DEBB /* MovieDBViewer */ = {
 			isa = PBXGroup;
 			children = (
+				AF27892F253C754E007A61A7 /* Extensions */,
+				AF27891C253C424E007A61A7 /* Landing Flow */,
 				AF2788BF253B3165007A61A7 /* Configuration */,
 				AF2788AE253B1E58007A61A7 /* DataHandlers */,
 				AF2788A5253B1B9D007A61A7 /* Main Flow */,
@@ -381,6 +406,7 @@
 				AF404220253A4CE10041DEBB /* Assets.xcassets in Resources */,
 				AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */,
 				AF2788F1253B4203007A61A7 /* MainPageViewController.xib in Resources */,
+				AF27891F253C42C3007A61A7 /* LandingPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,8 +543,10 @@
 				AF2788E4253B4065007A61A7 /* SearchAPICalls.swift in Sources */,
 				AF2788AA253B1DE3007A61A7 /* MovieDBAPI.swift in Sources */,
 				AF2788B0253B1F4C007A61A7 /* ConfigurationDataHandler.swift in Sources */,
+				AF278920253C42C3007A61A7 /* LandingPageViewController.swift in Sources */,
 				AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */,
 				AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */,
+				AF278931253C7571007A61A7 /* StringExtensions.swift in Sources */,
 				AF27890C253B8104007A61A7 /* GenreAPICalls.swift in Sources */,
 				AF2788D6253B3E9B007A61A7 /* MoviesAPICalls.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var tblMain: UITableView!
     
     var popularMovies : [MovieData] = []
-    var pageSize : Int = 10
+    var pageSize : Int = 20
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
@@ -91,7 +91,7 @@ extension MainPageViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == self.popularMovies.count - 3 && self.popularMovies.count % self.pageSize == 0{
-            self.loadData(page:  self.popularMovies.count / self.pageSize)
+            self.loadData(page:  (self.popularMovies.count / self.pageSize)+1)
         }
     }
     

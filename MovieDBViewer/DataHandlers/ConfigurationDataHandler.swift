@@ -39,7 +39,7 @@ class ConfigurationDataHandler: NSObject {
    }
    func imageBaseURL() -> String{
 
-       guard let plist = fullPlist, let url = plist["ImageBaseURL"] as? String else{
+       guard let plist = fullPlist, let url = plist["imageBaseURL"] as? String else{
            fatalError("could not find ImageBaseURL on Configuration.plist")
        }
        return url
