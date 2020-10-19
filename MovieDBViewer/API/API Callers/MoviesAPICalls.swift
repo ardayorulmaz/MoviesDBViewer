@@ -18,4 +18,12 @@ class MovieAPICalls: NSObject {
 
    }
     
+    //Extending the call here to benefit from moviedb's api to avoid two extra calls to server. Using append to response to get videos and credits
+    static func getDetailExtended(id : Int,
+                          success:@escaping (MovieDetailExtended?) -> Void,
+                          failure:@escaping (Error?) -> Void){
+     
+     MovieDBViewerAPI.sharedAPI.get("movie/\(String(id))"+ConfigurationDataHandler.shared.APIKey()+"&language=en-US&append_to_response=videos,credits", parameters: nil, success: success, failure: failure);
+
+    }
 }

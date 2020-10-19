@@ -114,9 +114,9 @@ extension MainPageViewController : UITableViewDataSource, UITableViewDelegate{
         
         let movieDetailVC = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
         
-     //   movieDetailVC.movieId = self.popularMovies[indexPath.row].id
-       
-        self.navigationController?.pushViewController(movieDetailVC , animated: true)
+        movieDetailVC.movieID = self.popularMovies[indexPath.row].id
+        movieDetailVC.modalPresentationStyle = .overFullScreen
+        self.present(movieDetailVC , animated: true)
         
     }
     

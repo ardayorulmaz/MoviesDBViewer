@@ -8,7 +8,11 @@
 import Foundation
 extension String {
     
-    
+    var localized: String {
+           get { return NSLocalizedString(self, comment: "") }
+       }
+
+
     func dateFormatted()->String{
         let selfDateFormatter = DateFormatter()
         selfDateFormatter.dateFormat = "yyyy-MM-dd"
