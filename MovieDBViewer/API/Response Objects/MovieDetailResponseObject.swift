@@ -46,8 +46,10 @@ struct MovieDetailExtended: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
         case credits
+        case videos
     }
 }
+
 
 // MARK: - Credits
 struct Credits: Codable {
@@ -138,19 +140,20 @@ struct SpokenLanguage: Codable {
 }
 // MARK: - Videos
 struct Videos: Codable {
-    var results: [VideoResult]?
+    var results: [VideoResult]
 }
 // MARK: - VideoResult
 struct VideoResult: Codable {
-    var id, iso639_1, iso3166_1, key: String?
+    var id : String
+    var iso_639_1, iso_3166_1, key: String?
     var name, site: String?
     var size: Int?
     var type: String?
 
     enum CodingKeys: String, CodingKey {
         case id
-        case iso639_1 = "iso_639_1"
-        case iso3166_1 = "iso_3166_1"
+        case iso_639_1 = "iso_639_1"
+        case iso_3166_1 = "iso_3166_1"
         case key, name, site, size, type
     }
 }

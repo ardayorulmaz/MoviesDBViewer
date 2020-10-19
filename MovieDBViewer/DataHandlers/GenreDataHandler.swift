@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//*A singleton for  handling genre data, its calling fresh data from server each launch and handles genre string generating
 class GenreDataHandler: NSObject {
     
     static let shared: GenreDataHandler = {
@@ -29,6 +29,7 @@ class GenreDataHandler: NSObject {
         case .Movie:
             key = self.movieGenreDataKey
         }
+        //Calling saved genre data from userdetails
         guard let jsonString =  UserDefaults.standard.string(forKey: key ?? self.movieGenreDataKey )else{
             return nil
         }
@@ -37,7 +38,7 @@ class GenreDataHandler: NSObject {
         let data = try! decoder.decode(GenreResponse.self, from: jsonData)
         return data
     }
-    
+    // A stronfg
     func getGenreString(ids : [Int], genre : GenreMedia)->String?{
             guard let genreData = self.getGenreDataFor(media: genre) else {
                 return nil
@@ -77,7 +78,7 @@ class GenreDataHandler: NSObject {
     
    
         
-        
+        //ServerCall for tv genres
     
     func getTVGenreDataFromServer( endBlock: @escaping () -> Void = {}) {
         
@@ -93,6 +94,8 @@ class GenreDataHandler: NSObject {
         }
         
     }
+    
+    //Server call for move genres
     func getMovieGenreDataFromServer( endBlock: @escaping () -> Void = {}) {
         
         GenreAPICalls.getGenres(media: "movie", success: { (response) in

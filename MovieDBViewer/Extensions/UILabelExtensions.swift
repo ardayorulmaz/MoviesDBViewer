@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//To use localized strings in interface builder
 @IBDesignable
 extension UILabel {
     

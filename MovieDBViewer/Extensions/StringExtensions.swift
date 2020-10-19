@@ -7,12 +7,12 @@
 
 import Foundation
 extension String {
-    
+    //To get localized strings
     var localized: String {
            get { return NSLocalizedString(self, comment: "") }
        }
 
-
+// Formatting dates to a desirable format
     func dateFormatted()->String{
         let selfDateFormatter = DateFormatter()
         selfDateFormatter.dateFormat = "yyyy-MM-dd"

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+//Some class modifications which require implicit sizes in autolayout
 final class ContentSizedTableView: UITableView {
     override var contentSize:CGSize {
         didSet {

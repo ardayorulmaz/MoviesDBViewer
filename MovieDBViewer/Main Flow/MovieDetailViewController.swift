@@ -28,7 +28,8 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var cltnMain: UICollectionView!
     
-    @IBOutlet weak var vwVideoContainer: UIView!
+    
+    @IBOutlet weak var vwVideoContainer: VideoReusableView!
     
     var cellSize : CGSize = CGSize.init(width: 120, height: 180)
     var creditsCount : Int = 0
@@ -41,6 +42,7 @@ class MovieDetailViewController: UIViewController {
         self.configureCollectionView()
         // Do any additional setup after loading the view.
     }
+    //Main func to load data from api
     
     func loadData(){
         guard let id = self.movieID else {
@@ -100,6 +102,20 @@ class MovieDetailViewController: UIViewController {
             self.creditsCount = creditsCount
             self.cltnMain.reloadData()
         }
+        
+        if let videos = data.videos?.results {
+            var keys : [String] = []
+            for item in videos{
+                if item.site == "YouTube", let youtubeKey = item.key{
+                    keys.append(youtubeKey)
+            }
+                self.vwVideoContainer.videoArray = keys
+                
+            }  }
+        else {
+                self.vwVideoContainer.isHidden = true
+            }
+        
         
     }
     /*

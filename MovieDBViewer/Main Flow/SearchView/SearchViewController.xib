@@ -26,15 +26,16 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Movies, Tv Series or Celebrities" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-do-dUn">
-                            <rect key="frame" x="15" y="10" width="329" height="40"/>
+                            <rect key="frame" x="15" y="10" width="339" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="textTyped:" destination="-1" eventType="editingChanged" id="0Ic-0A-TxZ"/>
                             </connections>
                         </textField>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4hX-EW-HJQ">
-                            <rect key="frame" x="359" y="10" width="40" height="40"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="4hX-EW-HJQ">
+                            <rect key="frame" x="369" y="15" width="30" height="30"/>
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="4hX-EW-HJQ" secondAttribute="height" multiplier="1:1" id="1kz-en-kQL"/>
                             </constraints>
@@ -44,17 +45,18 @@
                     <constraints>
                         <constraint firstItem="4hX-EW-HJQ" firstAttribute="leading" secondItem="Ocf-do-dUn" secondAttribute="trailing" constant="15" id="5hx-wx-viT"/>
                         <constraint firstAttribute="bottom" secondItem="Ocf-do-dUn" secondAttribute="bottom" constant="10" id="CJi-8h-PjP"/>
-                        <constraint firstItem="4hX-EW-HJQ" firstAttribute="top" secondItem="JHe-Mx-Sg7" secondAttribute="top" constant="10" id="Pbg-AK-ZJF"/>
+                        <constraint firstItem="4hX-EW-HJQ" firstAttribute="top" secondItem="JHe-Mx-Sg7" secondAttribute="top" constant="15" id="Pbg-AK-ZJF"/>
                         <constraint firstItem="Ocf-do-dUn" firstAttribute="leading" secondItem="JHe-Mx-Sg7" secondAttribute="leading" constant="15" id="YOt-zv-Nwz"/>
                         <constraint firstItem="Ocf-do-dUn" firstAttribute="top" secondItem="JHe-Mx-Sg7" secondAttribute="top" constant="10" id="aeh-af-H3z"/>
                         <constraint firstAttribute="height" constant="60" id="bAN-Zr-bGd"/>
                         <constraint firstAttribute="trailing" secondItem="4hX-EW-HJQ" secondAttribute="trailing" constant="15" id="eD4-3d-Dzt"/>
-                        <constraint firstAttribute="bottom" secondItem="4hX-EW-HJQ" secondAttribute="bottom" constant="10" id="sM4-FR-Y4B"/>
+                        <constraint firstAttribute="bottom" secondItem="4hX-EW-HJQ" secondAttribute="bottom" constant="15" id="sM4-FR-Y4B"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-md-DSk">
                     <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="sectionIndexBackgroundColor" systemColor="systemGrayColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -72,8 +74,15 @@
         </view>
     </objects>
     <resources>
+        <image name="search" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -17,13 +17,16 @@ class SearchViewController: UIViewController {
     var lastkeyword : String?
     var pageSize = 20
     var results : [Result] = []
-    
-//    var searchResults : [MultiSearchResult(T)] = []
+    weak var delegate : SearchViewDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
+        
         // Do any additional setup after loading the view.
     }
+    
+    // Initializing table view 
     func initTableView() {
             
             let nib = UINib(nibName: SearchResultsTableViewCell.identifier(), bundle: nil)
@@ -35,39 +38,63 @@ class SearchViewController: UIViewController {
             self.tblMain.estimatedRowHeight = 150
             self.tblMain.alwaysBounceVertical = false
         }
-    
+     // Preferred to use single generic model for multi search results because hybrid model used here would only be usable for here and not for extended details that we require for detail pages and API's mostly optional resuts caused many other problems while casting a hybrid protocol based model.
     func searchKeyword(word : String, page : Int = 1){
         if page == 1 {
             self.results = []
+            self.tblMain.showActivityIndicator()
         }
         SearchAPICalls.multiSearch(keyword: word, page: page) { (response) in
             self.lastkeyword = word
+            
             guard let data = response?.results else{
                 return
             }
-            self.results.append(contentsOf: data)
-            self.tblMain.reloadData()
-            print(data.count)
+            if page == 1 && data.count == 0{
+                self.tblMain.restore()
+                self.tblMain.setEmptyMessage("txtEmptySearchResults".localized)
+                self.tblMain.reloadData()
+                
+            }else {
+                self.results.append(contentsOf: data)
+                self.tblMain.reloadData()
+                
+            }
+            
+           
         } failure: { (error) in
             print(error.debugDescription)
         }
 
         
     }
-
+//Func for observing text field value  and auto search function with 2 second delay
     @IBAction func textTyped(_ sender: Any) {
-        
+        guard let delegate = self.delegate else {
+            return
+        }
         if let textTyping = self.textTypingDispatch {
+            self.tblMain.restore()
             textTyping.cancel()
         }
+        //Adding minimum two character limit for search
         if let text =  self.txtfldSearchField.text, text.count >= 2{
+            
+           // Delegate call for expanding the search view to show loading indicator
+            delegate.expandView()
             self.textTypingDispatch = DispatchWorkItem {
-                print(text)
-                self.searchKeyword(word : text)
+               
+                self.searchKeyword(word : text.replacingOccurrences(of: " ", with: "%20"))
             }
+            //Delayed server call to prevent call flood.
             if let textTyping = self.textTypingDispatch {
+                self.tblMain.showActivityIndicator()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: textTyping)
             }
+        }else {
+            //If text is deleted or les than two characters calling delegate to shrink search tableview
+            delegate.collapseView()
+            
         }
     }
     
@@ -86,6 +113,8 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        //Paginating results to ease data use
         guard let keyword = self.lastkeyword else {
             return
         }
@@ -96,13 +125,12 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        let movieDetailVC = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
-        
-     //   movieDetailVC.movieId = self.popularMovies[indexPath.row].id
-       
-        self.navigationController?.pushViewController(movieDetailVC , animated: true)
-        
+        //search results to item detail function, didnt implement for tv shows because it required different detail data call and different sections for detail page.
+        guard let delegate = self.delegate, self.results.count > 0
+        else {
+            return
+        }
+        delegate.resultSelected(id: self.results[indexPath.row].id, media: results[indexPath.row].mediaType)
     }
     
 }

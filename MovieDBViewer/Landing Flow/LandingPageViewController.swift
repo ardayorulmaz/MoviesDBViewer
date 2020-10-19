@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//A landing view for app for when there are some server calls to be made before accepting user to app before initializing main flow app requires a window.
 class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {

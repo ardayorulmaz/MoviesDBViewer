@@ -72,7 +72,7 @@
                     <rect key="frame" x="0.0" y="104" width="414" height="723"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-nu-OT2">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1542"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1414"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNy-sP-csE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="454"/>
@@ -114,7 +114,7 @@
                                     <rect key="frame" x="0.0" y="504" width="414" height="365"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-p3-GWD" userLabel="title">
-                                            <rect key="frame" x="20" y="20" width="374" height="20.5"/>
+                                            <rect key="frame" x="20" y="20" width="374" height="288"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lP-kM-nXC" userLabel="summary">
-                                            <rect key="frame" x="20" y="60.5" width="374" height="284.5"/>
+                                            <rect key="frame" x="20" y="328" width="374" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -180,13 +180,6 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jt-UR-Pwz">
-                                    <rect key="frame" x="0.0" y="1414" width="414" height="128"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="128" id="LCo-HM-01e"/>
-                                    </constraints>
-                                </view>
                             </subviews>
                         </stackView>
                     </subviews>

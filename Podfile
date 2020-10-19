@@ -6,11 +6,13 @@ target 'MovieDBViewer' do
   use_frameworks!
 
   # Pods for MovieDBViewer
+ 
 pod 'Alamofire', '~> 5.2'
-pod 'Kingfisher', '~> 5.0'
-pod 'NotificationBannerSwift', '~> 3.0.0'
 
-  target 'MovieDBViewerTests' do
+pod 'Kingfisher', '~> 5.0'
+
+pod "youtube-ios-player-helper"
+target 'MovieDBViewerTests' do
     inherit! :search_paths
     # Pods for testing
   end

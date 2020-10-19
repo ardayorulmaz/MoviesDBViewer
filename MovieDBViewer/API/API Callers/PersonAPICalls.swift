@@ -7,7 +7,7 @@
 
 import Foundation
 class PersonDetailAPICAlls: NSObject
-{
+{// API call to get extended person details, credits keyword is also addded to recieve where person worked and as what.
     static func getDetailExtended(id : Int,
                              success:@escaping (PersonDetail?) -> Void,
                              failure:@escaping (Error?) -> Void){

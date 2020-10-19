@@ -2,12 +2,13 @@
 //  XibInstantiable.swift
 //  MovieDBViewer
 //
-//  Created by ArdaY on 18/10/2020.
+//  Created by ArdaY on 19/10/2020.
 //
 
 import Foundation
+import Foundation
 import UIKit
-
+// Exrtension for instantiable xibs for easy to use reusable views.
 protocol XibInstantiatable {
     func instantiate()
 }
@@ -36,6 +37,5 @@ extension XibInstantiatable where Self: UIView {
             views: bindings))
     }
 }
-
 
 

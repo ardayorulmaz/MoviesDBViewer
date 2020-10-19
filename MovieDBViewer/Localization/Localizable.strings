@@ -10,4 +10,5 @@
 "txtPersonDetail" = "Person Detail";
 "txtBiography" = "Biography";
 "txtKnownFor" = "Known For";
+"txtEmptySearchResults" = "Your search yielded no results, please check your query or do another search.";
 

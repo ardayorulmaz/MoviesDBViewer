@@ -23,7 +23,7 @@ class MovieAPICalls: NSObject {
                           success:@escaping (MovieDetailExtended?) -> Void,
                           failure:@escaping (Error?) -> Void){
      
-     MovieDBViewerAPI.sharedAPI.get("movie/\(String(id))"+ConfigurationDataHandler.shared.APIKey()+"&language=en-US&append_to_response=videos,credits", parameters: nil, success: success, failure: failure);
+     MovieDBViewerAPI.sharedAPI.get("movie/\(String(id))"+ConfigurationDataHandler.shared.APIKey()+"&language=en-US&append_to_response=videos%2Ccredits", parameters: nil, success: success, failure: failure);
 
     }
 }
