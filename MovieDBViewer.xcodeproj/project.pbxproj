@@ -41,6 +41,10 @@
 		AF27897E253D6C6F007A61A7 /* MovieDetailResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27897D253D6C6F007A61A7 /* MovieDetailResponseObject.swift */; };
 		AF278988253D8D00007A61A7 /* CreditsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF278986253D8D00007A61A7 /* CreditsCollectionViewCell.xib */; };
 		AF278989253D8D00007A61A7 /* CreditsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278987253D8D00007A61A7 /* CreditsCollectionViewCell.swift */; };
+		AF2789BB253DCF4A007A61A7 /* PersonAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2789BA253DCF4A007A61A7 /* PersonAPICalls.swift */; };
+		AF2789C0253DD044007A61A7 /* PersonResponseObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2789BF253DD044007A61A7 /* PersonResponseObjects.swift */; };
+		AF2789CF253DD699007A61A7 /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2789CD253DD699007A61A7 /* PersonDetailViewController.xib */; };
+		AF2789D0253DD699007A61A7 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2789CE253DD699007A61A7 /* PersonDetailViewController.swift */; };
 		AF404217253A4CE00041DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF404216253A4CE00041DEBB /* AppDelegate.swift */; };
 		AF40421B253A4CE00041DEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40421A253A4CE00041DEBB /* ViewController.swift */; };
 		AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40421C253A4CE00041DEBB /* Main.storyboard */; };
@@ -108,6 +112,10 @@
 		AF27897D253D6C6F007A61A7 /* MovieDetailResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponseObject.swift; sourceTree = "<group>"; };
 		AF278986253D8D00007A61A7 /* CreditsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AF278987253D8D00007A61A7 /* CreditsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF2789BA253DCF4A007A61A7 /* PersonAPICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAPICalls.swift; sourceTree = "<group>"; };
+		AF2789BF253DD044007A61A7 /* PersonResponseObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonResponseObjects.swift; sourceTree = "<group>"; };
+		AF2789CD253DD699007A61A7 /* PersonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
+		AF2789CE253DD699007A61A7 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		AF404213253A4CE00041DEBB /* MovieDBViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDBViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF404216253A4CE00041DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40421A253A4CE00041DEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 		AF2788A5253B1B9D007A61A7 /* Main Flow */ = {
 			isa = PBXGroup;
 			children = (
+				AF2789CC253DD664007A61A7 /* PersonDetailView */,
 				AF278935253C84AD007A61A7 /* SearchView */,
 				AF2788FE253B7493007A61A7 /* TableViewCells */,
 				AF2788EF253B4203007A61A7 /* MainPageViewController.xib */,
@@ -222,6 +231,7 @@
 				AF2788D5253B3E9B007A61A7 /* MoviesAPICalls.swift */,
 				AF2788E3253B4065007A61A7 /* SearchAPICalls.swift */,
 				AF27890B253B8104007A61A7 /* GenreAPICalls.swift */,
+				AF2789BA253DCF4A007A61A7 /* PersonAPICalls.swift */,
 			);
 			path = "API Callers";
 			sourceTree = "<group>";
@@ -234,6 +244,7 @@
 				AF278956253CB8DE007A61A7 /* MultiTypeResponseObject.swift */,
 				AF278960253CE5BA007A61A7 /* MultiSearchResponse.swift */,
 				AF27897D253D6C6F007A61A7 /* MovieDetailResponseObject.swift */,
+				AF2789BF253DD044007A61A7 /* PersonResponseObjects.swift */,
 			);
 			path = "Response Objects";
 			sourceTree = "<group>";
@@ -303,6 +314,15 @@
 				AF278987253D8D00007A61A7 /* CreditsCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		AF2789CC253DD664007A61A7 /* PersonDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				AF2789CD253DD699007A61A7 /* PersonDetailViewController.xib */,
+				AF2789CE253DD699007A61A7 /* PersonDetailViewController.swift */,
+			);
+			path = PersonDetailView;
 			sourceTree = "<group>";
 		};
 		AF40420A253A4CDF0041DEBB = {
@@ -485,6 +505,7 @@
 				AF40421E253A4CE00041DEBB /* Main.storyboard in Resources */,
 				AF2788F1253B4203007A61A7 /* MainPageViewController.xib in Resources */,
 				AF27891F253C42C3007A61A7 /* LandingPageViewController.xib in Resources */,
+				AF2789CF253DD699007A61A7 /* PersonDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF278979253D68D1007A61A7 /* ContentSizedViews.swift in Sources */,
+				AF2789C0253DD044007A61A7 /* PersonResponseObjects.swift in Sources */,
 				AF2788F2253B4203007A61A7 /* MainPageViewController.swift in Sources */,
 				AF278907253B8098007A61A7 /* GenreResponseObject.swift in Sources */,
 				AF278946253C94DF007A61A7 /* XibInstantiable.swift in Sources */,
@@ -622,6 +644,8 @@
 				AF278918253BA8CF007A61A7 /* MovieDetailViewController.swift in Sources */,
 				AF2788D1253B3D8E007A61A7 /* PopularMoviesResponseObject.swift in Sources */,
 				AF2788E4253B4065007A61A7 /* SearchAPICalls.swift in Sources */,
+				AF2789BB253DCF4A007A61A7 /* PersonAPICalls.swift in Sources */,
+				AF2789D0253DD699007A61A7 /* PersonDetailViewController.swift in Sources */,
 				AF2788AA253B1DE3007A61A7 /* MovieDBAPI.swift in Sources */,
 				AF2788B0253B1F4C007A61A7 /* ConfigurationDataHandler.swift in Sources */,
 				AF278920253C42C3007A61A7 /* LandingPageViewController.swift in Sources */,

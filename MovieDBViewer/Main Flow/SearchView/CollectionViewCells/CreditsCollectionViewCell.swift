@@ -45,4 +45,17 @@ class CreditsCollectionViewCell: UICollectionViewCell {
 
 
     }
+    
+    func initCreditsWith(data : CreditsOf){
+        if let image = data.posterPath{
+        self.imgPerson.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  image ), placeholder: UIImage.init(named: "movieDBLogo") )
+        }
+        else {
+            self.imgPerson.image = UIImage.init(named: "movieDBLogo")
+        }
+        self.lblPerson.text = data.character ?? ""
+        self.lblPersonJob.text = data.job ?? ""
+
+
+    }
 }

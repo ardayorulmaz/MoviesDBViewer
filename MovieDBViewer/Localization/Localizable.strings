@@ -6,3 +6,8 @@
   
 */
 "txtSummary" = "Summary";
+"txtMovieDetail" = "Movie Detail";
+"txtPersonDetail" = "Person Detail";
+"txtBiography" = "Biography";
+"txtKnownFor" = "Known For";
+

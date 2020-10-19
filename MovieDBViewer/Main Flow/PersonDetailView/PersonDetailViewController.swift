@@ -1,40 +1,32 @@
 //
-//  MovieDetailViewController.swift
+//  PersonDetailViewController.swift
 //  MovieDBViewer
 //
-//  Created by ArdaY on 17/10/2020.
+//  Created by ArdaY on 19/10/2020.
 //
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
-    var movieID : Int?
-    @IBOutlet weak var vwMovieImage: UIView!
+class PersonDetailViewController: UIViewController {
     
-    @IBOutlet weak var imgMovieImage: UIImageView!
-    
-    @IBOutlet weak var vwMovieTitle: UIView!
-    
-    @IBOutlet weak var lblMovieTItle: UILabel!
-    
-    @IBOutlet weak var lblScore: UILabel!
-    
-    @IBOutlet weak var lblVotes: UILabel!
+    @IBOutlet weak var imgPersonImage: UIImageView!
     
     
-    @IBOutlet weak var lblSummary: UILabel!
+    @IBOutlet weak var lblPersonName: UILabel!
     
-    @IBOutlet weak var lblExtraInfo: UILabel!
+    @IBOutlet weak var lblBiography: UILabel!
+    
+    @IBOutlet weak var lblExtraData: UILabel!
+    
     
     @IBOutlet weak var cltnMain: UICollectionView!
-    
-    @IBOutlet weak var vwVideoContainer: UIView!
+    var personId : Int?
     
     var cellSize : CGSize = CGSize.init(width: 120, height: 180)
     var creditsCount : Int = 0
-    var credits : Credits?
-    var cast : [Cast] = []
-    var crew : [Crew] = []
+    var credits : InCredits?
+    var cast : [CreditsOf] = []
+    var crew : [CreditsOf] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadData()
@@ -43,11 +35,12 @@ class MovieDetailViewController: UIViewController {
     }
     
     func loadData(){
-        guard let id = self.movieID else {
+        guard let id = self.personId else {
             return
         }
         
-        MovieAPICalls.getDetailExtended(id: id) { (response) in
+        PersonDetailAPICAlls.getDetailExtended(id: id) { (response) in
+            
             guard let data = response else {
                 return
             }
@@ -61,26 +54,17 @@ class MovieDetailViewController: UIViewController {
         
         
     }
-    func initValues(data : MovieDetailExtended){
+    func initValues(data : PersonDetail){
         //Preferring poster path over backdrop path because it shows less vertical empty space
-        if let movieImage = data.posterPath{
-            self.imgMovieImage.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  movieImage ), placeholder: UIImage.init(named: "movieDBLogo") )
+        if let personImage = data.profilePath{
+            self.imgPersonImage.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  personImage ), placeholder: UIImage.init(named: "movieDBLogo") )
         }
-        if let title = data.title {
-            self.lblMovieTItle.text = title
+        if let name = data.name {
+            self.lblPersonName.text = title
         }
-        if let score = data.voteAverage{
-            self.lblScore.text = String(format:"%0.1f", score) + "/10"
-        }else{
-            self.lblScore.text = "-/10"
-        }
-        if let voteCount = data.voteCount{
-            self.lblVotes.text = String(voteCount)
-        }else {
-            self.lblVotes.isHidden = true
-        }
-        if let overView = data.overview {
-            self.lblSummary.text = overView
+     
+        if let bio = data.biography {
+            self.lblBiography.text = bio
         }
         else {
             //            self.vwOververview.ishidden = true
@@ -132,7 +116,7 @@ class MovieDetailViewController: UIViewController {
     
 }
 
-extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
+extension PersonDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
@@ -163,22 +147,6 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard  self.creditsCount > 0 else {
-            return
-        }
-        
-        let personDetailVC = PersonDetailViewController(nibName: "PersonDetailViewController", bundle: nil)
-        if indexPath.row >= self.cast.count, self.crew.count > 0 {
-            personDetailVC.personId = self.crew[indexPath.row-self.cast.count].id
-        } else if indexPath.row < self.cast.count{
-          
-            personDetailVC.personId = self.cast[indexPath.row].id
-        }
-        
-        personDetailVC.modalPresentationStyle = .overFullScreen
-        self.present(personDetailVC , animated: true)
-        
-        
         
         
     }
@@ -189,7 +157,7 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
 }
 
 
-extension MovieDetailViewController: UICollectionViewDelegateFlowLayout  {
+extension PersonDetailViewController: UICollectionViewDelegateFlowLayout  {
     
     
     

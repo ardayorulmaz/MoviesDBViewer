@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,14 +24,14 @@
                             <constraint firstAttribute="width" constant="100" id="eKO-Hq-2qK"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-mj-w2s">
-                        <rect key="frame" x="10" y="242" width="100" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-mj-w2s">
+                        <rect key="frame" x="10" y="182" width="100" height="77"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" systemColor="systemGray4Color"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-20-2Hp">
-                        <rect key="frame" x="10" y="164" width="100" height="68"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-20-2Hp">
+                        <rect key="frame" x="10" y="159" width="100" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -47,10 +46,10 @@
                 <constraint firstAttribute="trailing" secondItem="PLA-20-2Hp" secondAttribute="trailing" constant="10" id="KS4-jD-fii"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="0ZR-Qr-kmU" secondAttribute="leading" constant="-10" id="Kyj-qI-kqo"/>
                 <constraint firstItem="0ZR-Qr-kmU" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="-10" id="O90-6t-FSD"/>
-                <constraint firstItem="bAf-mj-w2s" firstAttribute="top" secondItem="PLA-20-2Hp" secondAttribute="bottom" constant="10" id="Ydj-zn-dLv"/>
+                <constraint firstItem="bAf-mj-w2s" firstAttribute="top" secondItem="PLA-20-2Hp" secondAttribute="bottom" constant="5" id="Ydj-zn-dLv"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="bAf-mj-w2s" secondAttribute="bottom" constant="20" id="fIx-Rs-RNo"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="0ZR-Qr-kmU" secondAttribute="top" constant="-10" id="idR-qU-C2M"/>
-                <constraint firstItem="PLA-20-2Hp" firstAttribute="top" secondItem="0ZR-Qr-kmU" secondAttribute="bottom" constant="10" id="kgs-V9-FJE"/>
+                <constraint firstItem="PLA-20-2Hp" firstAttribute="top" secondItem="0ZR-Qr-kmU" secondAttribute="bottom" constant="5" id="kgs-V9-FJE"/>
             </constraints>
             <size key="customSize" width="130" height="279"/>
             <connections>
@@ -61,9 +60,4 @@
             <point key="canvasLocation" x="195.6521739130435" y="128.23660714285714"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
