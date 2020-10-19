@@ -14,7 +14,7 @@ protocol DecodableClassFamily : Decodable {
 }
 
 enum Discriminator : String, CodingKey {
-    case type
+    case mediaType = "media_type"
 }
 
 enum SearchResultFamily : String, DecodableClassFamily {
@@ -25,7 +25,7 @@ enum SearchResultFamily : String, DecodableClassFamily {
     case tv
 case person
 
-    static var discriminator: Discriminator { return .type }
+    static var discriminator: Discriminator { return .mediaType }
 
     func getType() -> SearchResult.Type {
         switch self {

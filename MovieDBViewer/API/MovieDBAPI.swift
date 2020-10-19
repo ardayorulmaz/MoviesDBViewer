@@ -86,6 +86,7 @@ class MovieDBViewerAPI: NSObject {
         
         
         session.request(url, method: .get, parameters: parameters, encoding : JSONEncoding.default).validate().responseDecodable{ (response:AFDataResponse<T>)  in
+            
             switch response.result {
                 
             case .success(let value):

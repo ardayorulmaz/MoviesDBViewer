@@ -20,14 +20,24 @@ var totalPages: Int?
 
 
 }
-class SearchResult : Codable {
-    var id: String?
-    var mediaType  : String?
+class SearchResult : Codable,CustomStringConvertible {
+    var description: String {
+        return "Result ???"
+    }
+    
+    var id: Int
+    var mediaType  : String
    
  enum CodingKeys : String, CodingKey, Codable{
 case id
 case mediaType = "media_type"
  }
+    
+    
+//    init(type:String){
+//        id = Int(UUID().uuidString
+//        self.mediaType = type
+//    }
 }
 
 
@@ -85,35 +95,39 @@ class TVData: SearchResult{
 
 
 
-// MARK: - KnownFor
-class MovieData: SearchResult {
+class MovieData: SearchResult{
     var posterPath: String?
+    var popularity: Double = 0
     var voteCount: Int?
     var video: Bool?
     var adult: Bool?
     var backdropPath: String?
+    var originalLanguage, originalTitle: String?
     var genreIDS: [Int]?
-    var originalTitle, originalLanguage, title: String?
+    var title: String?
     var voteAverage: Double?
     var overview, releaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"
-        case id
+        case popularity
         case voteCount = "vote_count"
         case video
         case mediaType = "media_type"
-        case adult
+        case id, adult
         case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
-        case originalTitle = "original_title"
         case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case genreIDS = "genre_ids"
         case title
         case voteAverage = "vote_average"
         case overview
         case releaseDate = "release_date"
     }
+
 }
+
+
 
 
 
