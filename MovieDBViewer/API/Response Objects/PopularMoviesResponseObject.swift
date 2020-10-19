@@ -11,10 +11,10 @@ import Foundation
 // MARK: - Welcome
 struct PopularMoviesResponse: Codable {
     var page : Int?
-var totalResults : Int?
-var totalPages: Int?
+    var totalResults : Int?
+    var totalPages: Int?
     var results: [PopularMovieData]?
-
+    
     enum CodingKeys: String, CodingKey {
         case page
         case totalResults = "total_results"
@@ -38,7 +38,7 @@ struct PopularMovieData: Codable {
     var title: String?
     var voteAverage: Double?
     var overview, releaseDate: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case popularity
         case voteCount = "vote_count"

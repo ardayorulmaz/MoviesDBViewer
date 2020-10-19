@@ -30,13 +30,20 @@ class PopularMoviesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgMovie.kf.cancelDownloadTask()
+        self.imgMovie.image = nil
+    }
     static func identifier() -> String{
            return "PopularMoviesTableViewCell"
        }
-    func configureCell(data : PopularMovieData
-    ){
+    func configureCell(data : PopularMovieData){
         if let movieImage = data.posterPath{
-            self.imgMovie.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  movieImage ), placeholder: UIImage.init(named: "movieDBLogo") )
+            self.imgMovie.kf.setImage(with: URL(string: ConfigurationDataHandler.shared.imageBaseURL() +  movieImage ), placeholder: UIImage.init(named: "movieDBLogo")) { (result) in
+                self.layoutIfNeeded()
+            }
         }
         if let ids = data.genreIDS {
             self.lblGenres.text = GenreDataHandler.shared.getGenreString(ids: ids, genre : .Movie)
@@ -50,7 +57,7 @@ class PopularMoviesTableViewCell: UITableViewCell {
         if let rate = data.voteAverage {
             self.lblScore.text = String(format: "%.1f", rate) + "/10"
         }
-        
+
     }
     
        

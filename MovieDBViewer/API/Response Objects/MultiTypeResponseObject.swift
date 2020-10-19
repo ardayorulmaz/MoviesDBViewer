@@ -8,36 +8,36 @@
 import Foundation
 class MultiTypeResponse : Codable{
     var page : Int?
-var totalResults : Int?
-var totalPages: Int?
+    var totalResults : Int?
+    var totalPages: Int?
     var results: [SearchResult]?
     
     
     required init(from decoder: Decoder) throws {
-           let container = try decoder.container(keyedBy: CodingKeys.self)
-           self.results = try container.decodeHeterogeneousArray(family: SearchResultFamily.self, forKey: .results)
-       }
-
-
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.results = try container.decodeHeterogeneousArray(family: SearchResultFamily.self, forKey: .results)
+    }
+    
+    
 }
-class SearchResult : Codable,CustomStringConvertible {
+class SearchResult : Codable, CustomStringConvertible {
     var description: String {
         return "Result ???"
     }
     
     var id: Int
     var mediaType  : String
-   
- enum CodingKeys : String, CodingKey, Codable{
-case id
-case mediaType = "media_type"
- }
+    
+    enum CodingKeys : String, CodingKey, Codable{
+        case id
+        case mediaType = "media_type"
+    }
     
     
-//    init(type:String){
-//        id = Int(UUID().uuidString
-//        self.mediaType = type
-//    }
+    //    init(type:String){
+    //        id = Int(UUID().uuidString
+    //        self.mediaType = type
+    //    }
 }
 
 
@@ -50,7 +50,7 @@ class PersonData: SearchResult {
     var profilePath: String?
     var gender: Int?
     var adult: Bool?
-
+    
     enum CodingKeys: String, CodingKey {
         case knownForDepartment = "known_for_department"
         case id, name
@@ -76,7 +76,7 @@ class TVData: SearchResult{
     var voteAverage: Int?
     var overview: String?
     var posterPath: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case originalName = "original_name"
         case genreIDS = "genre_ids"
@@ -107,7 +107,7 @@ class MovieData: SearchResult{
     var title: String?
     var voteAverage: Double?
     var overview, releaseDate: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"
         case popularity
@@ -124,7 +124,7 @@ class MovieData: SearchResult{
         case overview
         case releaseDate = "release_date"
     }
-
+    
 }
 
 

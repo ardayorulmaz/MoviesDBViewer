@@ -30,7 +30,7 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var vwVideoContainer: UIView!
     
-    var cellSize : CGSize?
+    var cellSize : CGSize = CGSize.init(width: 120, height: 180)
     var creditsCount : Int = 0
     var credits : Credits?
     var cast : [Cast] = []
@@ -41,7 +41,7 @@ class MovieDetailViewController: UIViewController {
         self.configureCollectionView()
         // Do any additional setup after loading the view.
     }
-
+    
     func loadData(){
         guard let id = self.movieID else {
             return
@@ -58,7 +58,7 @@ class MovieDetailViewController: UIViewController {
             (error) in
             print(error.debugDescription)
         }
-
+        
         
     }
     func initValues(data : MovieDetailExtended){
@@ -83,7 +83,7 @@ class MovieDetailViewController: UIViewController {
             self.lblSummary.text = overView
         }
         else {
-//            self.vwOververview.ishidden = true
+            //            self.vwOververview.ishidden = true
         }
         if let credits = data.credits{
             var creditsCount : Int = 0
@@ -103,97 +103,86 @@ class MovieDetailViewController: UIViewController {
         
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func configureCollectionView() {
-          
         
-           cltnMain.dataSource = self
-           cltnMain.delegate = self
-              self.cltnMain.register(UINib(nibName: CreditsCollectionViewCell.identifier(), bundle:nil),
-                                       forCellWithReuseIdentifier: CreditsCollectionViewCell.identifier())
-                   cltnMain.backgroundColor = UIColor.clear
-             
-       }
-       
-       
-   }
+        
+        cltnMain.dataSource = self
+        cltnMain.delegate = self
+        self.cltnMain.register(UINib(nibName: CreditsCollectionViewCell.identifier(), bundle:nil),
+                               forCellWithReuseIdentifier: CreditsCollectionViewCell.identifier())
+        cltnMain.backgroundColor = UIColor.clear
+        
+    }
+    
+    
+}
 
-   extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
-       func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           
-          
+extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        
         return self.creditsCount
-          
-       }
-       
-       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard  self.creditsCount > 0 else {
             return UICollectionViewCell()
         }
         if indexPath.row >= self.cast.count, self.crew.count > 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreditsCollectionViewCell", for: indexPath) as! CreditsCollectionViewCell
             cell.initCreditsWith(data: self.crew[indexPath.row-self.cast.count] )
-                                  return cell
+            return cell
         } else if indexPath.row < self.cast.count{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreditsCollectionViewCell", for: indexPath) as! CreditsCollectionViewCell
             cell.initCreditsWith(data: self.cast[indexPath.row] )
-                                  return cell
+            return cell
         }else{
             return UICollectionViewCell()
         }
-           }
-           
-           
-          
-       
-       
-       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-           
+    }
+    
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-           
-       }
-       
-       
-       
-       
+        
+        
+    }
+    
+    
+    
+    
 }
 
 
-   extension MovieDetailViewController: UICollectionViewDelegateFlowLayout  {
-        
-       
+extension MovieDetailViewController: UICollectionViewDelegateFlowLayout  {
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return self.cellSize
 
-
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-           return 5
-       }
-       
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-           return 5
-       }
-       
-             func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                 if let size = self.cellSize {
-                     return size
-                 }
-         
-                 var calculatedSize = CGSize()
-         
-               let height = CGFloat(200)
-               let width = CGFloat(120)
-                 calculatedSize.width = width
-                 calculatedSize.height = height
-                 self.cellSize = calculatedSize
-                 return calculatedSize
-         
-             }
-       
-   }
+    }
+    
+}
 

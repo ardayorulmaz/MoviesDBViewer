@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dct-wQ-pAB">
-                    <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="lc9-jc-SWn"/>
+                        <constraint firstAttribute="height" constant="60" id="lc9-jc-SWn"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M71-wF-UnT">
-                    <rect key="frame" x="0.0" y="294" width="414" height="568"/>
+                    <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -40,10 +40,9 @@
                 <constraint firstItem="dct-wQ-pAB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hxb-nS-qou"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dct-wQ-pAB" secondAttribute="trailing" id="Zvh-bS-sDJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M71-wF-UnT" secondAttribute="trailing" id="fkw-vy-YBr"/>
-                <constraint firstItem="M71-wF-UnT" firstAttribute="top" secondItem="dct-wQ-pAB" secondAttribute="bottom" id="kT5-an-NrD"/>
                 <constraint firstItem="M71-wF-UnT" firstAttribute="top" secondItem="dct-wQ-pAB" secondAttribute="bottom" id="lKg-Cg-FRJ"/>
                 <constraint firstItem="M71-wF-UnT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n3n-9Z-rdT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="M71-wF-UnT" secondAttribute="bottom" id="slm-pM-Orh"/>
+                <constraint firstAttribute="bottom" secondItem="M71-wF-UnT" secondAttribute="bottom" id="slm-pM-Orh"/>
             </constraints>
             <point key="canvasLocation" x="139" y="94"/>
         </view>

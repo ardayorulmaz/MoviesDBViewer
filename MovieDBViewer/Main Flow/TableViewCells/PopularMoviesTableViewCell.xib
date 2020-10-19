@@ -4,47 +4,46 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="327" id="KGk-i7-Jjw" customClass="PopularMoviesTableViewCell" customModule="MovieDBViewer" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="327" id="KGk-i7-Jjw" customClass="PopularMoviesTableViewCell" customModule="MovieDBViewer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="479" height="327"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="479" height="327"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieDBLogo" translatesAutoresizingMaskIntoConstraints="NO" id="760-Rm-pPC">
-                        <rect key="frame" x="15" y="15" width="297" height="297"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" image="movieDBLogo" translatesAutoresizingMaskIntoConstraints="NO" id="760-Rm-pPC">
+                        <rect key="frame" x="5" y="15" width="120" height="297"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="999" constant="180" id="MVd-Ia-pEw"/>
-                            <constraint firstAttribute="width" secondItem="760-Rm-pPC" secondAttribute="height" multiplier="1:1" id="QzQ-8c-Odo"/>
+                            <constraint firstAttribute="width" constant="120" id="qci-Js-Tud"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieName" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMM-fx-L3Z">
-                        <rect key="frame" x="342" y="15" width="122" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="BMM-fx-L3Z">
+                        <rect key="frame" x="135" y="10" width="329" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBt-4j-Fzc">
-                        <rect key="frame" x="362" y="51" width="102" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBt-4j-Fzc">
+                        <rect key="frame" x="135" y="35.5" width="329" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Genres" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BYn-gO-C2Q">
-                        <rect key="frame" x="334" y="122" width="130" height="143"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Genres" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BYn-gO-C2Q">
+                        <rect key="frame" x="135" y="53.5" width="329" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-it-dat">
-                        <rect key="frame" x="429.5" y="280" width="44.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-it-dat">
+                        <rect key="frame" x="135" y="71.5" width="329" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,23 +51,22 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="BYn-gO-C2Q" secondAttribute="trailing" constant="15" id="0QV-I0-xDs"/>
                     <constraint firstAttribute="trailing" secondItem="XBt-4j-Fzc" secondAttribute="trailing" constant="15" id="3z3-qJ-jsu"/>
-                    <constraint firstItem="cVR-it-dat" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="15" id="5Jl-cj-aO6"/>
+                    <constraint firstItem="cVR-it-dat" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-15" id="5Jl-cj-aO6"/>
                     <constraint firstItem="760-Rm-pPC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="F1o-nJ-GrB"/>
-                    <constraint firstItem="BYn-gO-C2Q" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailingMargin" constant="30" id="H6s-We-bUx"/>
+                    <constraint firstItem="cVR-it-dat" firstAttribute="leading" secondItem="BYn-gO-C2Q" secondAttribute="leading" id="GbF-1h-VAg"/>
+                    <constraint firstItem="BYn-gO-C2Q" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailing" constant="10" id="H6s-We-bUx"/>
                     <constraint firstAttribute="trailing" secondItem="BMM-fx-L3Z" secondAttribute="trailing" constant="15" id="K8h-I3-9gF"/>
-                    <constraint firstItem="BMM-fx-L3Z" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailing" constant="30" id="Wj9-Z8-pQe"/>
-                    <constraint firstItem="BYn-gO-C2Q" firstAttribute="top" secondItem="XBt-4j-Fzc" secondAttribute="bottom" constant="50" id="b4F-WK-zp1"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cVR-it-dat" secondAttribute="bottom" constant="10" id="LDE-3s-mVs"/>
+                    <constraint firstItem="BMM-fx-L3Z" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailing" constant="10" id="Wj9-Z8-pQe"/>
+                    <constraint firstItem="BYn-gO-C2Q" firstAttribute="top" secondItem="XBt-4j-Fzc" secondAttribute="bottom" id="b4F-WK-zp1"/>
                     <constraint firstAttribute="bottom" secondItem="760-Rm-pPC" secondAttribute="bottom" constant="15" id="bar-8s-XX4"/>
-                    <constraint firstItem="cVR-it-dat" firstAttribute="top" secondItem="BYn-gO-C2Q" secondAttribute="bottom" constant="15" id="i5j-2S-0Gr"/>
-                    <constraint firstItem="cVR-it-dat" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-15" id="lkO-iB-3Ln"/>
-                    <constraint firstItem="XBt-4j-Fzc" firstAttribute="top" secondItem="BMM-fx-L3Z" secondAttribute="bottom" constant="15" id="lml-aa-HBy"/>
-                    <constraint firstItem="cVR-it-dat" firstAttribute="top" secondItem="BYn-gO-C2Q" secondAttribute="bottom" constant="15" id="oKT-QR-seS"/>
-                    <constraint firstItem="XBt-4j-Fzc" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailing" constant="50" id="qCL-ls-JLn"/>
-                    <constraint firstItem="BMM-fx-L3Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="xuC-kb-r40"/>
-                    <constraint firstItem="760-Rm-pPC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ykF-SU-Xrf"/>
+                    <constraint firstItem="cVR-it-dat" firstAttribute="top" secondItem="BYn-gO-C2Q" secondAttribute="bottom" id="i5j-2S-0Gr"/>
+                    <constraint firstItem="XBt-4j-Fzc" firstAttribute="top" secondItem="BMM-fx-L3Z" secondAttribute="bottom" id="lml-aa-HBy"/>
+                    <constraint firstItem="XBt-4j-Fzc" firstAttribute="leading" secondItem="760-Rm-pPC" secondAttribute="trailing" constant="10" id="qCL-ls-JLn"/>
+                    <constraint firstItem="BMM-fx-L3Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xuC-kb-r40"/>
+                    <constraint firstItem="760-Rm-pPC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ykF-SU-Xrf"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imgMovie" destination="760-Rm-pPC" id="eLN-WU-BWO"/>
                 <outlet property="lblGenres" destination="BYn-gO-C2Q" id="aDx-nd-xAN"/>
@@ -81,5 +79,8 @@
     </objects>
     <resources>
         <image name="movieDBLogo" width="185" height="133"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
